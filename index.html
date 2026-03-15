@@ -8,331 +8,112 @@
 <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-/* ─── RESET & BASE ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
-body {
-  font-family: 'Source Sans Pro', -apple-system, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  background: #fff;
-}
-
+body { font-family: 'Source Sans Pro', -apple-system, sans-serif; font-size: 1rem; line-height: 1.6; color: #333; background: #fff; }
 a { color: #1a6fa6; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ─── MASTHEAD ─── */
-.masthead {
-  background: #fff;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 0 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.masthead-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px;
-}
-.masthead-title {
-  font-family: Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: normal;
-  color: #333;
-}
-.greedy-nav {
-  display: flex;
-  gap: 0;
-  list-style: none;
-}
-.greedy-nav li a {
-  display: block;
-  padding: 0 1rem;
-  height: 56px;
-  line-height: 56px;
-  font-size: 0.875rem;
-  color: #555;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: color 0.15s;
-}
+/* MASTHEAD */
+.masthead { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
+.masthead-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.masthead-title { font-family: Georgia, serif; font-size: 1.1rem; font-weight: normal; color: #333; }
+.greedy-nav { display: flex; gap: 0; list-style: none; }
+.greedy-nav li a { display: block; padding: 0 1rem; height: 56px; line-height: 56px; font-size: 0.875rem; color: #555; text-decoration: none; font-weight: 600; letter-spacing: 0.02em; transition: color 0.15s; }
 .greedy-nav li a:hover { color: #1a6fa6; }
-.greedy-nav li.active a { color: #1a6fa6; border-bottom: 2px solid #1a6fa6; }
 
-/* ─── LAYOUT ─── */
-.page-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 2rem;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 3rem;
-  align-items: start;
-}
+/* LAYOUT */
+.page-wrapper { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem; display: grid; grid-template-columns: 260px 1fr; gap: 3rem; align-items: start; }
 
-/* ─── SIDEBAR ─── */
-.sidebar {
-  position: sticky;
-  top: 72px;
-}
-.author-avatar img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 1rem;
-  border: 4px solid #e0e0e0;
-}
-.author-name {
-  font-family: Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: 0.25rem;
-}
-.author-bio {
-  font-size: 0.85rem;
-  color: #555;
-  text-align: center;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
-}
-.author-links {
-  list-style: none;
-  padding: 0;
-}
-.author-links li {
-  margin-bottom: 0.4rem;
-}
-.author-links li a {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.875rem;
-  color: #444;
-  text-decoration: none;
-  padding: 0.15rem 0;
-}
+/* SIDEBAR */
+.sidebar { position: sticky; top: 72px; }
+.author-avatar img { display: block; width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: top; margin: 0 auto 1rem; border: 4px solid #e0e0e0; }
+.author-name { font-family: Georgia, serif; font-size: 1.25rem; font-weight: normal; text-align: center; margin-bottom: 0.25rem; }
+.author-bio { font-size: 0.85rem; color: #555; text-align: center; line-height: 1.5; margin-bottom: 1.25rem; }
+.author-links { list-style: none; padding: 0; }
+.author-links li { margin-bottom: 0.4rem; }
+.author-links li a { display: flex; align-items: center; gap: 0.6rem; font-size: 0.875rem; color: #444; text-decoration: none; padding: 0.15rem 0; }
 .author-links li a:hover { color: #1a6fa6; text-decoration: none; }
-.author-links li a i {
-  width: 16px;
-  font-size: 0.9rem;
-  color: #777;
-  flex-shrink: 0;
-}
+.author-links li a i { width: 16px; font-size: 0.9rem; color: #777; flex-shrink: 0; }
 .author-links li a:hover i { color: #1a6fa6; }
-.sidebar-divider {
-  border: none;
-  border-top: 1px solid #e8e8e8;
-  margin: 1.25rem 0;
-}
+.sidebar-divider { border: none; border-top: 1px solid #e8e8e8; margin: 1.25rem 0; }
 
-/* ─── MAIN CONTENT ─── */
-.page-content {
-  min-width: 0;
-}
+/* MAIN CONTENT */
+.page-content { min-width: 0; }
+h1, h2 { font-family: Georgia, serif; font-weight: normal; }
+.page-content h1.page-title { font-size: 1.8rem; margin-bottom: 1rem; color: #222; }
+.page-content h2 { font-size: 1.3rem; color: #222; margin-top: 2rem; margin-bottom: 0.75rem; padding-bottom: 0.25rem; border-bottom: 1px solid #e0e0e0; }
+.page-content p { margin-bottom: 0.9rem; color: #333; }
 
-/* Section headings */
-h1, h2 {
-  font-family: Georgia, serif;
-  font-weight: normal;
-}
-.page-content h1.page-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #222;
-}
-.page-content h2 {
-  font-size: 1.3rem;
-  color: #222;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid #e0e0e0;
-}
-.page-content p {
-  margin-bottom: 0.9rem;
-  color: #333;
-}
+/* UPDATES */
+.updates-block { background: #f8f8f8; border: 1px solid #e0e0e0; border-radius: 4px; padding: 1rem 1.25rem; font-family: 'Source Code Pro', 'Courier New', monospace; font-size: 0.82rem; line-height: 1.7; color: #333; overflow-x: auto; max-height: 300px; overflow-y: auto; }
+.update-row { display: flex; gap: 1rem; margin-bottom: 0.1rem; }
+.update-date { white-space: nowrap; color: #888; min-width: 105px; }
+.update-text a { color: #1a6fa6; }
 
-/* ─── UPDATES / NEWS ─── */
-.updates-block {
-  background: #f8f8f8;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-  font-family: 'Source Code Pro', 'Courier New', monospace;
-  font-size: 0.82rem;
-  line-height: 1.7;
-  color: #333;
-  overflow-x: auto;
-  max-height: 300px;
-  overflow-y: auto;
-}
-.updates-block .update-row {
-  display: flex;
-  gap: 1rem;
-}
-.updates-block .update-date {
-  white-space: nowrap;
-  color: #888;
-  min-width: 100px;
-}
-.updates-block .update-text a { color: #1a6fa6; }
-
-/* ─── PUBLICATIONS ─── */
+/* PUBLICATIONS */
 .pub-list { list-style: none; padding: 0; }
-.pub-item {
-  margin-bottom: 1.2rem;
-  padding-bottom: 1.2rem;
-  border-bottom: 1px solid #f0f0f0;
-}
+.pub-item { margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 1px solid #f0f0f0; }
 .pub-item:last-child { border-bottom: none; }
-.pub-title {
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 0.2rem;
-  font-size: 0.95rem;
-}
-.pub-authors {
-  font-size: 0.875rem;
-  color: #555;
-  margin-bottom: 0.15rem;
-}
+.pub-title { font-weight: 600; color: #222; margin-bottom: 0.2rem; font-size: 0.95rem; }
+.pub-title a { color: #222; }
+.pub-title a:hover { color: #1a6fa6; }
+.pub-authors { font-size: 0.875rem; color: #555; margin-bottom: 0.15rem; }
 .pub-authors strong { color: #222; }
-.pub-venue {
-  font-size: 0.85rem;
-  color: #777;
-  font-style: italic;
-}
-.pub-venue .venue-tag {
-  background: #e8f0fe;
-  color: #1a5fa6;
-  padding: 0.1rem 0.45rem;
-  border-radius: 3px;
-  font-style: normal;
-  font-size: 0.78rem;
-  font-weight: 600;
-  margin-left: 0.35rem;
-  vertical-align: middle;
-}
+.pub-venue { font-size: 0.85rem; color: #777; font-style: italic; }
+.pub-venue .venue-tag { background: #e8f0fe; color: #1a5fa6; padding: 0.1rem 0.45rem; border-radius: 3px; font-style: normal; font-size: 0.78rem; font-weight: 600; margin-left: 0.35rem; vertical-align: middle; }
 
-/* ─── EXPERIENCE ─── */
-.exp-item {
-  margin-bottom: 1.5rem;
-}
-.exp-role {
-  font-weight: 600;
-  color: #222;
-  font-size: 0.95rem;
-}
-.exp-place {
-  color: #1a6fa6;
-  font-size: 0.9rem;
-}
-.exp-date {
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 0.3rem;
-}
-.exp-desc {
-  font-size: 0.875rem;
-  color: #444;
-  margin-top: 0.3rem;
-}
-.exp-desc li {
-  margin-bottom: 0.25rem;
-  margin-left: 1.2rem;
-}
+/* EXPERIENCE */
+.exp-item { margin-bottom: 1.5rem; }
+.exp-role { font-weight: 600; color: #222; font-size: 0.95rem; }
+.exp-place { color: #1a6fa6; font-size: 0.9rem; }
+.exp-date { font-size: 0.85rem; color: #888; margin-bottom: 0.3rem; }
+.exp-desc { font-size: 0.875rem; color: #444; margin-top: 0.3rem; }
+.exp-desc li { margin-bottom: 0.25rem; margin-left: 1.2rem; }
 
-/* ─── RESEARCH INTERESTS ─── */
-.research-areas {
-  list-style: disc;
-  margin-left: 1.5rem;
-  color: #333;
-  font-size: 0.95rem;
-}
+/* RESEARCH */
+.research-areas { list-style: disc; margin-left: 1.5rem; color: #333; font-size: 0.95rem; }
 .research-areas li { margin-bottom: 0.3rem; }
 
-/* ─── SKILLS TABLE ─── */
-.skills-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-}
-.skills-table td {
-  padding: 0.4rem 0.75rem;
-  border: 1px solid #e8e8e8;
-  vertical-align: top;
-}
-.skills-table td:first-child {
-  font-weight: 600;
-  color: #444;
-  background: #fafafa;
-  width: 140px;
-  white-space: nowrap;
-}
+/* SKILLS TABLE */
+.skills-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin-top: 0.5rem; }
+.skills-table td { padding: 0.4rem 0.75rem; border: 1px solid #e8e8e8; vertical-align: top; }
+.skills-table td:first-child { font-weight: 600; color: #444; background: #fafafa; width: 140px; white-space: nowrap; }
 
-/* ─── EDUCATION ─── */
+/* EDUCATION */
 .edu-item { margin-bottom: 1.25rem; }
 .edu-degree { font-weight: 600; color: #222; }
 .edu-school { color: #1a6fa6; }
 .edu-date { font-size: 0.85rem; color: #888; }
 .edu-details { font-size: 0.875rem; color: #444; margin-top: 0.2rem; }
 
-/* ─── PROJECTS ─── */
+/* PROJECTS */
 .project-item { margin-bottom: 1.25rem; }
 .project-title { font-weight: 600; color: #222; font-size: 0.95rem; }
 .project-desc { font-size: 0.875rem; color: #444; margin-top: 0.2rem; }
-.project-tech {
-  margin-top: 0.3rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-.tech-tag {
-  background: #f0f0f0;
-  color: #555;
-  padding: 0.1rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.78rem;
-}
+.project-tech { margin-top: 0.3rem; display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.tech-tag { background: #f0f0f0; color: #555; padding: 0.1rem 0.5rem; border-radius: 12px; font-size: 0.78rem; }
 
-/* ─── SERVICE ─── */
+/* SERVICE */
 .service-list { list-style: none; padding: 0; font-size: 0.9rem; }
 .service-list li { margin-bottom: 0.4rem; color: #444; }
 .service-list li em { font-weight: 600; font-style: normal; color: #333; }
 
-/* ─── FOOTER ─── */
-footer {
-  margin-top: 4rem;
-  border-top: 1px solid #e0e0e0;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #999;
-}
+/* TRAINING */
+.training-item { margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #f0f0f0; }
+.training-item:last-child { border-bottom: none; }
+.training-name { font-weight: 600; color: #222; font-size: 0.9rem; }
+.training-org { font-size: 0.85rem; color: #555; }
+.training-date { font-size: 0.82rem; color: #888; }
 
-/* ─── RESPONSIVE ─── */
+/* FOOTER */
+footer { margin-top: 4rem; border-top: 1px solid #e0e0e0; padding: 1.5rem 2rem; text-align: center; font-size: 0.8rem; color: #999; }
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .page-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .sidebar {
-    position: static;
-  }
-  .author-avatar img {
-    width: 140px;
-    height: 140px;
-  }
+  .page-wrapper { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .author-avatar img { width: 140px; height: 140px; }
   .greedy-nav { display: none; }
 }
 </style>
@@ -344,7 +125,7 @@ footer {
   <div class="masthead-inner">
     <span class="masthead-title">Shafayet Nur</span>
     <ul class="greedy-nav">
-      <li class="active"><a href="#about">About</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -367,11 +148,9 @@ footer {
     <hr class="sidebar-divider">
     <ul class="author-links">
       <li><a href="mailto:shafayetnur.abir@gmail.com"><i class="fas fa-envelope"></i> shafayetnur.abir@gmail.com</a></li>
-      <li><a href="tel:+17799025366"><i class="fas fa-phone"></i> +1 779 902 5366</a></li>
+      <li><a href="https://drive.google.com/drive/u/1/folders/1M9yrND5EzOooHI7fEDUKdxEp_8AFfJXB" target="_blank"><i class="fas fa-file-pdf"></i> CV / Resume</a></li>
       <li><a href="https://scholar.google.com/citations?user=Wup-DigAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
       <li><a href="https://github.com/shafayet-nur" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-      <li><a href="https://sites.google.com/view/shafayetnur" target="_blank"><i class="fas fa-globe"></i> Old Website</a></li>
-      <li><a href="#"><i class="fas fa-file-pdf"></i> CV / Resume</a></li>
     </ul>
     <hr class="sidebar-divider">
     <div style="font-size:0.8rem; color:#888;">
@@ -386,23 +165,14 @@ footer {
     <section id="about">
       <h1 class="page-title">Hello, this is Shafayet,</h1>
       <p>
-        I am a PhD student in the <a href="https://www.cs.niu.edu/" target="_blank">Department of Computer Science</a> at
-        <a href="https://www.niu.edu/" target="_blank">Northern Illinois University (NIU)</a>, DeKalb, IL.
-        I am fortunate to be advised by <a href="https://alhoori.github.io/" target="_blank">Prof. Hamed Alhoori</a>.
-        My primary research interest lies in applying <strong>Large Language Models for Scholarly Data Discovery</strong>.
-        I am also interested in <strong>NLP for low-resource languages</strong>, particularly cyberbullying detection
-        and hate speech categorization in Bengali text, as well as <strong>Computer Vision</strong> applied to
-        agricultural and industrial imaging.
+        I am a Ph.D. student in the Department of Computer Science at <a href="https://www.niu.edu/" target="_blank">Northern Illinois University (NIU)</a>, USA, where I am advised by <a href="https://alhoori.github.io/" target="_blank">Dr. Hamed Alhoori</a>. I am also a member of the <a href="https://datalab-niu.github.io/" target="_blank">NIU DATALab</a>. My research focuses on applying Large Language Models to scholarly data discovery, with the broader aim of improving how scientific literature is discovered, analyzed and synthesized. My other interests include natural language processing for low-resource languages, particularly cyberbullying detection and hate speech categorization in Bengali text, as well as computer vision and deep learning for agricultural and industrial imaging.
       </p>
       <p>
-        Previously, I served as a <strong>Lecturer</strong> in the Department of Computer Science and Engineering at
-        <a href="https://pciu.edu.bd/" target="_blank">Port City International University (PCIU)</a>, Chittagong, Bangladesh (Oct 2022 – Jun 2025),
-        where I taught courses in AI, Pattern Recognition, Software Engineering, Theory of Computing, Algorithms, Discrete Math,
-        and Structured Programming. I also coached the PCIU_BitRangers ACM ICPC team and supervised undergraduate theses.
+        At NIU, I currently serve as a Graduate Teaching Assistant in the Department of Computer Science. Before joining NIU, I earned my B.Sc. in Computer Science and Engineering from <a href="https://pciu.edu.bd/" target="_blank">Port City International University (PCIU)</a>, Bangladesh, in June 2021. I later served in the same department as a Teaching Assistant from September 2021 to September 2022 and as a Lecturer from October 2022 to June 2025. In those roles, I taught undergraduate courses in Artificial Intelligence, Pattern Recognition, Software Engineering, Algorithms, Discrete Mathematics and Structured Programming, while also supervising undergraduate thesis and project works.
       </p>
       <p>
         <strong>Contact: 📧</strong> <a href="mailto:shafayetnur.abir@gmail.com">shafayetnur.abir@gmail.com</a><br>
-        <strong>CV:</strong> <a href="#">[Resume]</a>
+        <strong>CV:</strong> <a href="https://drive.google.com/drive/u/1/folders/1M9yrND5EzOooHI7fEDUKdxEp_8AFfJXB" target="_blank">[Resume]</a>
       </p>
     </section>
 
@@ -410,17 +180,17 @@ footer {
     <section id="updates">
       <h2>Updates</h2>
       <div class="updates-block">
-        <div class="update-row"><span class="update-date">Aug 2025</span><span class="update-text">Joined NIU CS PhD program. Advised by Prof. Hamed Alhoori.</span></div>
-        <div class="update-row"><span class="update-date">Aug 2025</span><span class="update-text">Started as Graduate Teaching Assistant for Computer Architecture and System Organization.</span></div>
-        <div class="update-row"><span class="update-date">2024</span><span class="update-text">Paper accepted at WIECON-ECE 2024: Multi-Plant Disease Detection using Neural Networks.</span></div>
-        <div class="update-row"><span class="update-date">2024</span><span class="update-text">Paper accepted at ICISET 2024: Broken Stitch Detection using Deep Learning.</span></div>
-        <div class="update-row"><span class="update-date">2024</span><span class="update-text">Paper accepted at ICRPSET 2024: Bengali Hate Speech Categorization with Transformer-Based Models.</span></div>
-        <div class="update-row"><span class="update-date">Jun 2025</span><span class="update-text">Departed PCIU after 3 years as Lecturer. Starting PhD journey at NIU!</span></div>
-        <div class="update-row"><span class="update-date">Aug 2024</span><span class="update-text">Appointed Assistant Proctor at PCIU (Aug 2024 – Jun 2025).</span></div>
-        <div class="update-row"><span class="update-date">2022</span><span class="update-text">2 papers accepted at ICRPSET 2022 on Cyberbullying Detection in Bangla text.</span></div>
-        <div class="update-row"><span class="update-date">Oct 2022</span><span class="update-text">Joined PCIU CSE Dept as Lecturer. Promoted from Teaching Assistant role.</span></div>
-        <div class="update-row"><span class="update-date">2021</span><span class="update-text">Paper accepted at ICAECT 2021: Cyberbullying Detection in Bangla and Romanized Bangla text.</span></div>
-        <div class="update-row"><span class="update-date">Jun 2021</span><span class="update-text">Graduated BSc CSE from PCIU with CGPA 3.98/4.00. Ranked 2nd among 75 students.</span></div>
+        <div class="update-row"><span class="update-date">August 2025</span><span class="update-text">Joined NIU CS PhD program. Advised by Dr. Hamed Alhoori.</span></div>
+        <div class="update-row"><span class="update-date">August 2025</span><span class="update-text">Started as Graduate Teaching Assistant for Computer Architecture and System Organization.</span></div>
+        <div class="update-row"><span class="update-date">April 2025</span><span class="update-text">Paper Published at ICISET 2024: Broken Stitch Detection Method for Sewing Operation using Deep Learning.</span></div>
+        <div class="update-row"><span class="update-date">April 2025</span><span class="update-text">Paper Published at ICRPSET 2024: Bengali Hate Speech Categorization: A Comparison of Hybrid Deep Learning and Transformer-Based Models.</span></div>
+        <div class="update-row"><span class="update-date">March 2025</span><span class="update-text">Paper Published at WIECON-ECE 2024: A Comparative Analysis of Multi-Plant Disease Detection and Classification Using Neural Network Architectures.</span></div>
+        <div class="update-row"><span class="update-date">August 2024</span><span class="update-text">Appointed as Assistant Proctor at PCIU.</span></div>
+        <div class="update-row"><span class="update-date">2022</span><span class="update-text">2 papers accepted on Cyberbullying Detection in Bangla text.</span></div>
+        <div class="update-row"><span class="update-date">October 2022</span><span class="update-text">Promoted to Lecturer at PCIU.</span></div>
+        <div class="update-row"><span class="update-date">September 2021</span><span class="update-text">Joined PCIU as a Teaching Assistant at the Department of Computer Science and Engineering.</span></div>
+        <div class="update-row"><span class="update-date">June 2021</span><span class="update-text">Graduated BSc in CSE from Port City International University, Bangladesh.</span></div>
+        <div class="update-row"><span class="update-date">April 2021</span><span class="update-text">Paper Published at ICAECT 2021: Deployment of Machine Learning and Deep Learning Algorithms in Detecting Cyberbullying in Bangla and Romanized Bangla text: A Comparative Study.</span></div>
       </div>
     </section>
 
@@ -428,59 +198,54 @@ footer {
     <section id="research">
       <h2>Research Interests</h2>
       <ul class="research-areas">
-        <li><strong>Large Language Models for Scholarly Data Discovery</strong> — benchmarking LLMs on scientific figure understanding (graphical abstracts), information extraction from scholarly content.</li>
+        <li><strong>Large Language Models for Scholarly Data Discovery</strong> — benchmarking LLMs on scientific figure understanding, information extraction from scholarly content, improving how scientific literature is discovered, analyzed and synthesized.</li>
         <li><strong>NLP for Low-Resource Languages</strong> — cyberbullying detection, hate speech categorization, and text analytics in Bengali and Romanized Bengali.</li>
-        <li><strong>Computer Vision & Deep Learning</strong> — image classification, multi-label plant disease detection, defect detection in industrial settings (sewing operations).</li>
-        <li><strong>Multimodal Learning</strong> — fusion of visual and textual features for biomedical research figure classification.</li>
+        <li><strong>Computer Vision &amp; Deep Learning</strong> — image classification, multi-label plant disease detection, defect detection in industrial settings.</li>
+        <li><strong>Multimodal Learning</strong> — fusion of visual and textual features for biomedical and scientific figure classification.</li>
       </ul>
-
-      <h2 style="margin-top:1.75rem;">Current Projects</h2>
-
-      <div class="exp-item">
-        <div class="exp-role">Graphical Abstract Completeness Evaluation</div>
-        <div class="exp-desc">Building a benchmark dataset to evaluate LLM ability to assess the completeness of graphical abstracts in scientific papers. Working on automated quality scoring using vision-language models.</div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-role">LLMs for Scholarly Discovery</div>
-        <div class="exp-desc">Investigating how LLMs can enhance discovery of scientific knowledge from unstructured scholarly data, including paper recommendations, citation analysis, and structured extraction from figures and tables.</div>
-      </div>
     </section>
 
     <!-- PUBLICATIONS -->
     <section id="publications">
       <h2>Publications</h2>
       <ol class="pub-list">
+
         <li class="pub-item">
-          <div class="pub-title">A Comparative Analysis of Multi-Plant Disease Detection and Classification using Neural Network Architectures</div>
-          <div class="pub-authors"><strong>Shafayet Nur</strong>, et al.</div>
-          <div class="pub-venue">2024 IEEE WIECON-ECE <span class="venue-tag">WIECON-ECE 2024</span></div>
+          <div class="pub-title"><a href="#putlinkhere" target="_blank">A Comparative Analysis of Multi-Plant Disease Detection and Classification Using Neural Network Architectures</a></div>
+          <div class="pub-authors">S. R. Majumder, A. J. Islam, S. Salehin, S. R. Bhowmik, T. Amrine, and <strong>Shafayet Nur</strong></div>
+          <div class="pub-venue">2024 IEEE International Women in Engineering Conference on Electrical and Computer Engineering <span class="venue-tag">WIECON-ECE 2024</span></div>
         </li>
+
         <li class="pub-item">
-          <div class="pub-title">Broken Stitch Detection in Sewing Operations using Deep Learning</div>
-          <div class="pub-authors"><strong>Shafayet Nur</strong>, et al.</div>
-          <div class="pub-venue">2024 International Conference on Innovations in Science, Engineering and Technology (ICISET) <span class="venue-tag">ICISET 2024</span></div>
+          <div class="pub-title"><a href="#putlinkhere" target="_blank">Broken Stitch Detection Method for Sewing Operation using Deep Learning</a></div>
+          <div class="pub-authors">Himel Chowdhury, Ayan Kumar Dey, Turja Chowdhury, <strong>Shafayet Nur</strong>, Md. Jahidul Hasan Jahid, Taofica Amrine, and Maqsudur Rahman</div>
+          <div class="pub-venue">International Conference on Innovations in Science, Engineering and Technology 2024 <span class="venue-tag">ICISET 2024</span></div>
         </li>
+
         <li class="pub-item">
-          <div class="pub-title">Bengali Hate Speech Categorization: A Comparison of Hybrid Deep Learning and Transformer-Based Models</div>
-          <div class="pub-authors"><strong>Shafayet Nur</strong>, et al.</div>
-          <div class="pub-venue">International Conference on Recent Progressions in Science, Engineering and Technology (ICRPSET) <span class="venue-tag">ICRPSET 2024</span></div>
+          <div class="pub-title"><a href="#putlinkhere" target="_blank">Bengali Hate Speech Categorization: A Comparison of Hybrid Deep Learning and Transformer-Based Models</a></div>
+          <div class="pub-authors">I. Jahan, M. Z. Chowdhury, <strong>Shafayet Nur</strong>, Z. R. Chowdhury, R. Barua, and T. Amrine</div>
+          <div class="pub-venue">International Conference on Recent Progresses in Science, Engineering and Technology 2024 <span class="venue-tag">ICRPSET 2024</span></div>
         </li>
+
         <li class="pub-item">
-          <div class="pub-title">A Feature Engineering Approach for Detecting Cyberbullying in Bangla Text Using Machine Learning</div>
-          <div class="pub-authors"><strong>Shafayet Nur</strong>, et al.</div>
-          <div class="pub-venue">International Conference on Recent Progressions in Science, Engineering and Technology (ICRPSET) <span class="venue-tag">ICRPSET 2022</span></div>
+          <div class="pub-title"><a href="#putlinkhere" target="_blank">A Feature Engineering Approach for Detecting Cyberbullying in Bangla Text Using Machine Learning</a></div>
+          <div class="pub-authors">Maqsudur Rahman, <strong>Shafayet Nur</strong>, Md. Tofael Ahmed, Dipankar Das, and A. Z. M. Touhidul Islam</div>
+          <div class="pub-venue">International Conference on Recent Progresses in Science, Engineering and Technology 2022 <span class="venue-tag">ICRPSET 2022</span></div>
         </li>
+
         <li class="pub-item">
-          <div class="pub-title">BullySpotter: Online Bullying Detection in Bengali Text Using Transform Learning</div>
-          <div class="pub-authors"><strong>Shafayet Nur</strong>, et al.</div>
-          <div class="pub-venue">International Conference on Recent Progressions in Science, Engineering and Technology (ICRPSET) <span class="venue-tag">ICRPSET 2022</span></div>
+          <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10188530" target="_blank">BullySpotter: Online Bullying Detection in Bengali Text Using Transform Learning</a></div>
+          <div class="pub-authors">Md. Maherab Hasan, Minhaj Ul Islam Chowdhury, Taofica Amrine, <strong>Shafayet Nur</strong>, Maqsudur Rahman, Dipankar Das, and A. Z. M. Touhidul Islam</div>
+          <div class="pub-venue">International Conference on Recent Progresses in Science, Engineering and Technology 2022 <span class="venue-tag">ICRPSET 2022</span></div>
         </li>
+
         <li class="pub-item">
-          <div class="pub-title">Deployment of Machine Learning and Deep Learning Algorithms in Detecting Cyberbullying in Bangla and Romanized Bangla text: A Comparative Study</div>
-          <div class="pub-authors"><strong>Shafayet Nur</strong>, et al.</div>
-          <div class="pub-venue">2021 International Conference on Advances in Electrical, Computing, Communication and Sustainable Technologies (ICAECT) <span class="venue-tag">ICAECT 2021</span></div>
+          <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9392608" target="_blank">Deployment of Machine Learning and Deep Learning Algorithms in Detecting Cyberbullying in Bangla and Romanized Bangla text: A Comparative Study</a></div>
+          <div class="pub-authors">Md. Tofael Ahmed, Maqsudur Rahman, <strong>Shafayet Nur</strong>, Azm Islam, and Dipankar Das</div>
+          <div class="pub-venue">2021 International Conference on Advances in Electrical, Computing, Communication and Sustainable Technologies <span class="venue-tag">ICAECT 2021</span></div>
         </li>
+
       </ol>
     </section>
 
@@ -507,8 +272,9 @@ footer {
           <ul>
             <li>Courses: Artificial Intelligence, Pattern Recognition, Software Engineering, Theory of Computing, Design and Analysis of Algorithms, Discrete Mathematics, Structured Programming</li>
             <li>Assistant Proctor, PCIU (Aug 2024 – Jun 2025)</li>
-            <li>PCIU Journal Committee member; supervised undergraduate thesis and projects</li>
-            <li>Coach of <em>PCIU_BitRangers</em> (ACM ICPC competitive programming team)</li>
+            <li>PCIU Journal Committee member</li>
+            <li>Supervised undergraduate thesis and project works</li>
+            <li>Coach of competitive programming team for ICPC regional contests</li>
           </ul>
         </div>
       </div>
@@ -517,6 +283,11 @@ footer {
         <div class="exp-role">Teaching Assistant</div>
         <div class="exp-place">Department of Computer Science and Engineering, Port City International University (PCIU)</div>
         <div class="exp-date">September 2021 – September 2022 &nbsp;·&nbsp; Chittagong, Bangladesh</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Assisted faculty with course delivery, lab sessions, and student assessment across multiple undergraduate CS courses.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -529,7 +300,7 @@ footer {
         <div class="edu-school">Northern Illinois University, DeKalb, IL</div>
         <div class="edu-date">August 2025 – Present</div>
         <div class="edu-details">
-          Advisor: <a href="https://alhoori.github.io/" target="_blank">Prof. Hamed Alhoori</a><br>
+          Advisor: <a href="https://alhoori.github.io/" target="_blank">Dr. Hamed Alhoori</a><br>
           Courses: Big Ideas in CS, Programming Principles in Python, Design and Analysis of Algorithms, Pattern Recognition and Data Mining I &amp; II, Topics in CS (LLMs), Graduate Reading in CS
         </div>
       </div>
@@ -547,6 +318,31 @@ footer {
         <li>PCIU Merit Scholarship, Summer 2017</li>
         <li>SEIP-BITM Scholarship, 2018</li>
       </ul>
+    </section>
+
+    <!-- PROFESSIONAL TRAINING -->
+    <section id="training">
+      <h2>Professional Training</h2>
+
+      <div class="training-item">
+        <div class="training-name">Software Quality Testing (SQT)</div>
+        <div class="training-org">SEIP-BITM, Dhaka, Bangladesh</div>
+        <div class="training-date">2018</div>
+      </div>
+
+      <div class="training-item">
+        <div class="training-name">Machine Learning with Python</div>
+        <div class="training-org">Coursera / Online Platform</div>
+        <div class="training-date">During PCIU tenure</div>
+      </div>
+
+      <div class="training-item">
+        <div class="training-name">Deep Learning Specialization</div>
+        <div class="training-org">Coursera / Online Platform</div>
+        <div class="training-date">During PCIU tenure</div>
+      </div>
+
+      <p style="font-size:0.85rem; color:#888; margin-top:0.5rem;"><em>Note: Please update the training entries above with your actual professional training details from your CV.</em></p>
     </section>
 
     <!-- PROJECTS -->
@@ -603,7 +399,7 @@ footer {
       <h2>Academic Service</h2>
       <ul class="service-list">
         <li><em>Thesis/Project Supervision:</em> Supervised multiple undergraduate research projects and theses at PCIU</li>
-        <li><em>Competitive Programming:</em> Coached PCIU_BitRangers for ACM ICPC regional contests</li>
+        <li><em>Competitive Programming:</em> Coached university team for ACM ICPC regional contests</li>
         <li><em>Journal Committee:</em> PCIU Journal Committee member</li>
         <li><em>Proctorial Body:</em> Assistant Proctor, PCIU (Aug 2024 – Jun 2025)</li>
       </ul>
